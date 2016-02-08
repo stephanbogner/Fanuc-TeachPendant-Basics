@@ -27,97 +27,97 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## About
-Robots by Fanuc are controlled via the TeachPendant. This is a complex and difficult to learn device. This tutorial will teach you the basics to control a fanuc robot.
+Industrial Robots are difficult to control, they are made for specially trained personal and hardly accessible to anybody else. 
 
-We used a [Fanuc 200ic/5h](https://www.robots.com/fanuc/lr-mate-200ic-5h) for a semester project at the [HfG Schwäbisch Gmünd](http://www.hfg-gmuend.de/).
+For our semester project at the [HfG Schwäbisch Gmünd](http://www.hfg-gmuend.de/) we used a [Fanuc 200ic/5h](https://www.robots.com/fanuc/lr-mate-200ic-5h). This tutorial will show teach you the basics of the TeachPendant – a remote control by Fanuc to program their robots.
 
 ## Limitations
-We wanted to control our robot in real time using inputs from [Processing](https://processing.org/) or [Arduino](https://www.arduino.cc/), however we didn't accomplish that. If you have a solution to externally control the robot, feel free to fork this repo and add it to it.
+Originally we planned to control the robot externally via tools such as [Processing](https://processing.org/) or [Arduino](https://www.arduino.cc/). We were however not able to do that. If you have a solution to externally control the robot, feel free to fork this repo and add it to it.
 
 Your help would be hugely appreciated.
 
 ## Controlling the Robot
 ### Unlocking the robot
-In order to control the robot you have to diactivate his safety mechanism – the [dead man's switch](https://en.wikipedia.org/wiki/Dead_man%27s_switch). To activate the dead man's switch:
+In order to control the robot you have to diactivate his safety mechanism – the [dead man's switch](https://en.wikipedia.org/wiki/Dead_man%27s_switch):
 
 1. Press and hold <kbd>SHIFT</kbd>
 2. Press (half-way through) and hold one <kbd>vertical yellow button</kbd> on the rear of the TeachPendant 
 3. Keep holding these buttons (otherwise robot will go back into a locked mode)
 
 ### Set speed
-After turning on, the robot's speed will be pretty slow by default. Current speed is shown as percentage with a green background in the top right corner.
+After power up, the robot's speed will be slow by default. Current speed is shown as percentage with a green background in the top right corner. You can control the maximum speed on the TeachPendant:
 
 - <kbd>+%</kbd> Raises speed
 - <kbd>-%</kbd> Lowers speed
 
-**Note:** The robot's speed in manual mode is only a fraction of what it is in automatic mode. 100% in manual control is pretty slow, but will be dangerous in automatic mode. **Be careful!**
+**Note:** The robot's speed in manual mode is only a fraction of what it will in automatic mode. **Be careful!**
 
 
 ### Moving the robot
-There are multiple ways to control the robot. We only used the movement types "JOINT" and "WORLD". They can be cycled through by pressing <kbd>COORD</kbd> on the TeachPendant. The current mode will be shown in the top right with a black background.
+There are multiple ways to control the robot. However, we only used the movement types "JOINT" and "WORLD". They can be cycled through by pressing <kbd>COORD</kbd> on the TeachPendant. The current mode will be shown in the top right with a black background. These settings affect the functions of the blue buttons (on the right of the TeachPendant) which control the robots movement:
 
 ####Joint
 The movement type "JOINT" controls every joint individually. 
 
-**J1** is the base joint:
+**J1** = base joint:
 
 - <kbd>+X(J1)</kbd> Rotate anti-clockwise
 - <kbd>-X(J1)</kbd> Rotate clockwise
 
-**J2** is the lowest arm joint:
+**J2** = lower arm joint:
 
 - <kbd>+Y(J2)</kbd> Rotates upwards
 - <kbd>-Y(J2)</kbd> Rotates downwards
 
 
-**J3** is the second arm joint:
+**J3** = upper arm joint:
 
 - <kbd>+Z(J3)</kbd> Rotates upwards
 - <kbd>-Z(J3)</kbd> Rotates downwards
 
-**J4** is the joint of the "hand":
+**J4** = "hand" joint:
 
-- <kbd>+X(J4)</kbd> Rotates "hand" upwards
-- <kbd>-X(J4)</kbd> Rotates "hand" downwards
+- <kbd>+X(J4)</kbd> Rotates upwards
+- <kbd>-X(J4)</kbd> Rotates downwards
 
-**J5** is the the tool mount:
+**J5** = tool mount joint:
 
 - <kbd>+Y(J5)</kbd> Rotates clockwise
 - <kbd>-Y(J5)</kbd> Rotates anit-clockwise
 
-**J6** is not assigned in our robot (because it is only euqipped with five axis). It would control the arm's rotation itself.
+**J6** is not assigned in our robot (because it is only euqipped with five axis). Normally it would control the arm's rotation itself.
 
 
 ####World
 The movement type "WORLD" defines one point, where the robot points to. This point is the tip of the tool mount. This means, that you just set where the tool mount's tip should be located and the robot will move all necessary joints to reach that position.
 
-**J1** is the x-axis:
+**J1** = x-axis:
 
 - <kbd>+X(J1)</kbd> Move forward
 - <kbd>-X(J1)</kbd> Move backward
 
-**J2** is the y-axis:
+**J2** = y-axis:
 
 - <kbd>+Y(J2)</kbd> Move left
 - <kbd>-Y(J2)</kbd> Move right
 
 
-**J3** is the z-axis:
+**J3** = z-axis:
 
 - <kbd>+Z(J3)</kbd> Move up
 - <kbd>-Z(J3)</kbd> Move down
 
-**J4** is the joint of the "hand":
+**J4** = "hand" joint:
 
 - <kbd>+X(J4)</kbd> Rotates "hand" upwards
 - <kbd>-X(J4)</kbd> Rotates "hand" downwards
 
-**J5** is the the tool mount:
+**J5** = tool mount joint:
 
 - <kbd>+Y(J5)</kbd> Rotates clockwise
 - <kbd>-Y(J5)</kbd> Rotates anit-clockwise
 
-**J6** is not assigned in our robot (because it is only euqipped with five axis). It would control the arm's rotation itself.
+**J6** is not assigned in our robot (because it is only euqipped with five axis). Normally it would control the arm's rotation itself.
 
 
 
