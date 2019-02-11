@@ -56,7 +56,7 @@ After power up, the robot's speed will be slow by default. Current speed is show
 ### Moving the robot
 There are multiple ways to control the robot. However, we only used the movement types "JOINT" and "WORLD". They can be cycled through by pressing <kbd>COORD</kbd> on the TeachPendant. The current mode will be shown in the top right with a black background. These settings affect the functions of the blue buttons (on the right of the TeachPendant) which control the robots movement:
 
-####Joint
+#### Joint
 The movement type "JOINT" controls every joint individually. 
 
 **J1** = base joint:
@@ -88,7 +88,7 @@ The movement type "JOINT" controls every joint individually.
 **J6** is not assigned in our robot (because it is only euqipped with five axis). Normally it would control the arm's rotation itself.
 
 
-####World
+#### World
 The movement type "WORLD" defines one point, where the robot points to. This point is the tip of the tool mount. This means, that you just set where the tool mount's tip should be located and the robot will move all necessary joints to reach that position.
 
 **J1** = x-axis:
